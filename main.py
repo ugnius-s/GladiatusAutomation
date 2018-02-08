@@ -21,6 +21,6 @@ log_in(client,USER,"First time log in")
 # 0 - 99 Job scripts;
 # 100 - 199 Expedition scripts;
 
-#JOB_STABLES.loop(client, USER, "Darbas","doWork"), # Work in stables
-SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40) # Expeditions
+JOB_STABLES.loop(client, USER), # Work in stables
+#SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40) # Expeditions
 

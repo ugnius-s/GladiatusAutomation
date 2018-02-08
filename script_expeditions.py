@@ -11,6 +11,7 @@ def loop(client, user, place_selection, enemy_selection, max_hp):
     check_bonus(client)
     check_notifications(client)
     time.sleep(1)
+	
     if check_hp(client, max_hp):
       try:
         menu_link = client.find_element_by_css_selector("#cooldown_bar_expedition > a:nth-child(3)")
