@@ -8,7 +8,7 @@ Gladiatus Automation is a pile of python code using Selenium framework to automa
 
 As we are using python, additional setup is required such as python programming language, selenium framework and browser drivers.
 
-First of all you should install latest version of python from https://www.python.org/downloads/. Make sure to install pip and set proper environment variables so you could use py/python and pip commands from terminal.
+First of all you should install latest version of python from https://www.python.org/downloads/. Make sure to install pip and include installation directory to PATH environment variable so you could use py/python and pip commands from terminal.
 
 Next step would be to download browser drivers, currently only **Google Chrome** was tested. Select the latest version from https://sites.google.com/a/chromium.org/chromedriver/downloads and put downloaded executable to any folder which is mentioned in PATH environment variable. For Windows users I would suggest to place it into Python installation directory.
 
