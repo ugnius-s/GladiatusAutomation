@@ -11,7 +11,13 @@ def loop(client, user, place_selection, enemy_selection, max_hp, exit_on_zero_po
     check_bonus(client)
     check_notifications(client)
     time.sleep(1)
-	
+
+    # Check if we need to exit before delay
+    points = int(client.find_element_by_css_selector("#expeditionpoints_value_point").text)
+    if (points == 0 and exit_on_zero_points):
+      puts("Exiting expedition script")
+      return
+
     if check_hp(client, max_hp):
       try:
         menu_link = client.find_element_by_css_selector("#cooldown_bar_expedition > a:nth-child(3)")
@@ -45,10 +51,5 @@ def loop(client, user, place_selection, enemy_selection, max_hp, exit_on_zero_po
       wait_time = 0
       if (eaten == False): # no food
         wait_time = 30 * 60
-    
-    # Check if we need to exit before delay
-    points = int(client.find_element_by_css_selector("#expeditionpoints_value_point").text)
-    if (points == 0 and exit_on_zero_points):
-      puts("Exiting expedition script")
-      return
+
     delay(wait_time)
