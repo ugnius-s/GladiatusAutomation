@@ -7,7 +7,7 @@ from functions import *
 from objects import *
 
 USER = __import__(sys.argv[1])
-JOB_STABLES = __import__('job_stables')
+JOB_STABLES = __import__('script_stables')
 SCRIPT_EXPEDITIONS = __import__('script_expeditions')
 
 # Create client driver;
