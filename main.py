@@ -22,5 +22,5 @@ log_in(client,USER,"First time log in")
 # 100 - 199 Expedition scripts;
 
 #SCRIPT_STABLES.loop(client, USER) # Work in stables
-SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40) # Expeditions
+SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True) # Expeditions
 

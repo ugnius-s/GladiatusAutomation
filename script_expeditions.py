@@ -2,7 +2,7 @@ from selenium.common.exceptions import NoSuchElementException
 from functions import puts,check_bonus,log_in,check_notifications,check_hp,eat_food,delay
 import time
 
-def loop(client, user, place_selection, enemy_selection, max_hp):
+def loop(client, user, place_selection, enemy_selection, max_hp, exit_on_zero_points):
   puts("Doing expedition")
   
   while True:
@@ -45,4 +45,10 @@ def loop(client, user, place_selection, enemy_selection, max_hp):
       wait_time = 0
       if (eaten == False): # no food
         wait_time = 30 * 60
+    
+    # Check if we need to exit before delay
+    points = int(client.find_element_by_css_selector("#expeditionpoints_value_point").text)
+    if (points == 0 and exit_on_zero_points):
+      puts("Exiting expedition script")
+      return
     delay(wait_time)
