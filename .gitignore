@@ -5,7 +5,7 @@
 __pycache__
 
 # Debug
-debug
+debug*
 
 # Profiles
 sharps.py
