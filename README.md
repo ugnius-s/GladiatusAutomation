@@ -33,11 +33,15 @@ At this moment, there are no interface to manage automation, thus we have to do 
 
 ## * Job Stables * ##
 
-When started, bot will work in stables for every hour until end of universe.
+When started, bot will work in stables for every hour until end of universe.  
+
+``` SCRIPT_STABLES.loop(client, USER) ```
 
 ## * Expedition Script * ##
 
-Does expeditions and eats food from inventory if needed.
+Does expeditions and eats food from inventory if needed.  
+
+``` SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40) ```
 
 Script takes couple of number type parameters.
 * First: Selects which menu option should be selected in locations
