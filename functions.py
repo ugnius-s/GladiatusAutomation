@@ -76,12 +76,13 @@ def eat_food(client):
   
 def check_notifications(client):
   # Possible event such as level up could break automation, thus we have to check and click
-  puts("Checking for notifications")
   found = True
   while found:
     try:
       link_notification = client.find_element_by_id("linknotification")
       link_notification.click()
+      puts("Notification closed")
+      time.sleep(1)
     except (NoSuchElementException, ElementNotVisibleException):
       found = False
       puts("No notifications found")
