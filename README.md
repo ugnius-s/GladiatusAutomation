@@ -1,6 +1,6 @@
 # Gladiatus Automation #
 
-Gladiatus Automation is a pile of python code using Selenium framework to automate a very old browser game, published by Gameforge, called Gladiatus.
+Gladiatus Automation is a pile of python code using Selenium framework to automate a very old browser game, published by GameForge.
 
 *Automation code is ameturely written and needs lot of refactoring, but I'm too lazy.*
 
