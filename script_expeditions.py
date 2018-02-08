@@ -25,7 +25,7 @@ def loop(client, user, place_selection, enemy_selection, max_hp):
         place_link.click();
       except (NoSuchElementException, ElementNotVisibleException):
         puts("Cannot select place {0}".format(str(place_selection)))
-      time.sleep(2)
+      time.sleep(1)
 
       cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_text_expedition")	
       cooldown_indicator = client.find_elements_by_class_name("expedition_cooldown_reduce")
