@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
-from functions import puts,check_bonus,log_in,check_notifications
+from functions import puts,check_bonus,log_in,check_notifications,delay
 import time
 
 def loop(client, user):
@@ -24,6 +24,4 @@ def loop(client, user):
     except NoSuchElementException:
       puts("Unable to start working, will try again in 60 seconds") 
       wait_time = 60
-    for second in range (1,wait_time+1):
-      puts("Currently at {0}/{1}".format(str(second),str(wait_time)))
-      time.sleep(1)
+    delay(wait_time)

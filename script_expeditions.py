@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
-from functions import puts,check_bonus,log_in,check_notifications,check_hp,eat_food
+from functions import puts,check_bonus,log_in,check_notifications,check_hp,eat_food,delay
 import time
 
 def loop(client, user, place_selection, enemy_selection, max_hp):
@@ -45,6 +45,4 @@ def loop(client, user, place_selection, enemy_selection, max_hp):
       wait_time = 0
       if (eaten == False): # no food
         wait_time = 30 * 60
-    for second in range (1,wait_time+1):
-      puts("Currently at {0}/{1}".format(str(second),str(wait_time)))
-      time.sleep(1)
+    delay(client,wait_time)

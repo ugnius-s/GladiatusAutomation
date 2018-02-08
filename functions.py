@@ -9,6 +9,10 @@ import time
 def puts (text):
   print('['+str(datetime.now())+']$ '+text)
 
+def delay(wait_time)
+  for second in range (1,wait_time+1):
+    puts("Currently at {0}/{1}".format(str(second),str(wait_time)))
+    time.sleep(1)
   
 def check_hp(client, max_percentage):
   puts("Checking if there is sufficient amount of HP, at least ({0}%)".format(str(max_percentage)))
