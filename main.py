@@ -18,9 +18,6 @@ client.get(USER.DEFAULT_GLADIATUS_URI)
 # Login;
 log_in(client,USER,"First time log in")
 
-# 0 - 99 Job scripts;
-# 100 - 199 Expedition scripts;
-
-#SCRIPT_STABLES.loop(client, USER) # Work in stables
-SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True) # Expeditions
+#SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True) # Expeditions
+SCRIPT_STABLES.loop(client, USER, 1) # Work in stables
 
