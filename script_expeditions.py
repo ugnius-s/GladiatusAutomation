@@ -45,4 +45,4 @@ def loop(client, user, place_selection, enemy_selection, max_hp):
       wait_time = 0
       if (eaten == False): # no food
         wait_time = 30 * 60
-    delay(client,wait_time)
+    delay(wait_time)
