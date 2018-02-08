@@ -1,0 +1,11 @@
+# Compiled Python
+*.pyc
+
+# Py cache
+__pycache__
+
+# Debug
+debug
+
+# Profiles
+sharps.py
