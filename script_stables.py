@@ -9,7 +9,6 @@ def loop(client, user, hours):
   while True:
     wait_time = 3610
     log_in(client, user,"Checking if we can log in")
-    check_bonus(client)
     check_notifications(client)
     time.sleep(1)
 

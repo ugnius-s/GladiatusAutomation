@@ -74,9 +74,18 @@ def eat_food(client):
   actionChains.drag_and_drop(selected_element, avatar).perform()
   return True
   
+def check_bonus(client):
+  try:
+    bonus_link = client.find_element_by_id("linkLoginBonus")
+    bonus_link.click()
+    puts("Clicking bonus link")
+  except NoSuchElementException:
+    puts("No bonus link")
+
 def check_notifications(client):
   # Possible event such as level up could break automation, thus we have to check and click
   found = True
+  check_bonus(client)
   while found:
     try:
       link_notification = client.find_element_by_id("linknotification")
@@ -86,14 +95,6 @@ def check_notifications(client):
     except (NoSuchElementException, ElementNotVisibleException):
       found = False
       puts("No notifications found")
-	  
-def check_bonus(client):
-  try:
-    bonus_link = client.find_element_by_id("linkLoginBonus")
-    bonus_link.click()
-    puts("Clicking bonus link")
-  except NoSuchElementException:
-    puts("No bonus link")
 
 def log_in(client,user,notice):
   try:

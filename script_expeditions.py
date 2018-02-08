@@ -8,7 +8,6 @@ def loop(client, user, place_selection, enemy_selection, max_hp, exit_on_zero_po
   while True:
     wait_time = 60
     log_in(client, user,"Checking if we can log in")
-    check_bonus(client)
     check_notifications(client)
     time.sleep(1)
 
