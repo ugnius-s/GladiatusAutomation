@@ -1,5 +1,6 @@
 from functions import puts
 from selenium.common.exceptions import NoSuchElementException,ElementNotVisibleException
+from selenium.webdriver.support.ui import Select
 import time
 
 ###########    JOB     ###########
@@ -84,5 +85,79 @@ def is_expedition_on_cooldown(client):
     cooldown_indicator = client.find_elements_by_class_name("expedition_cooldown_reduce")
     if(len(cooldown_indicator) > 0):
       return True
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+    
+    
+####### LOG IN #########
+def get_username_box(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_id("login_username")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+    
+def get_password_box(client):
+  try:
+    return client.find_element_by_id("login_password")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_server_box(client):
+  try:
+    return Select(client.find_element_by_id("login_server"))
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+    
+#### CHARACTER ####
+
+def get_tab(client,tab_index):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector(
+      "#inventory_nav > a:nth-child({0})".format(tab_index))
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_inventory(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_id("inv")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_avatar(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector("#avatar > div:nth-child(4)")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_current_hp_percentage(client):
+  time.sleep(1)
+  try:
+    return int(client.find_element_by_id("header_values_hp_percent").text[:-1])
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+    
+def get_character_view(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector("#mainmenu > a:nth-child(1)")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+#### NOTIFICATIONS ####
+
+def get_bonus(client):
+  try:
+    return client.find_element_by_id("linkLoginBonus")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_notification(client):
+  try:
+    return client.find_element_by_id("linknotification")
   except (NoSuchElementException, ElementNotVisibleException):
     return False

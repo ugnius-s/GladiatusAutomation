@@ -4,7 +4,6 @@ from selenium import webdriver
 import importlib
 import sys
 from functions import *
-from objects import *
 
 USER = __import__(sys.argv[1])
 SCRIPT_STABLES = __import__('script_stables')
