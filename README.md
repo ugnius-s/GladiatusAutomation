@@ -41,10 +41,11 @@ When started, bot will work in stables for every hour until end of universe.
 
 Does expeditions and eats food from inventory if needed.  
 
-``` SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True) ```
+``` SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True, True) ```
 
-Script takes couple of number type parameters.
-* First: Selects which menu option should be used in locations
-* Second: Selects which enemy should be attacked
-* Third: Minimum health percentage when it should start to eat food
-* Fourth: Exit script on 0 expedition points
+Script takes couple of number type parameters(ignore first two).
+1. Selects which menu option should be used in locations
+2. Selects which enemy should be attacked
+3. Minimum health percentage when it should start to eat food
+4. Exit script on 0 expedition points
+5. Exit script when out of food
