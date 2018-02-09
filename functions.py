@@ -24,9 +24,11 @@ def delay(wait_time):
 def check_hp(client, max_percentage):
   # Check if HP is in proper range
   puts("Checking if there is sufficient amount of HP, at least ({0}%)".format(str(max_percentage)))
+  
   hp_percentage = SELECTORS.get_current_hp_percentage(client)
   if (hp_percentage) and (hp_percentage >= max_percentage):
     return True
+    
   return False
 
 def eat_food(client):
