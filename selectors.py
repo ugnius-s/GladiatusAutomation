@@ -39,7 +39,7 @@ def get_dungeon_cooldown_time(client, check_for_work):
     if (cooldown_bar_text == "-"):
       return False
     if (check_for_work):
-      return  True
+      return True
     nums = [int(n) for n in cooldown_bar_text.split(':')]
     return nums[0] * 3600 + nums[1] * 60 + nums[2]
   except (NoSuchElementException, ElementNotVisibleException):
@@ -58,7 +58,36 @@ def get_dungeon_bar(client):
     return client.find_element_by_css_selector("#cooldown_bar_dungeon > a:nth-child(3)")
   except (NoSuchElementException, ElementNotVisibleException):
     return False
-  
+
+def get_dungeon_tab(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector("#mainnav > li > table > tbody > tr > td:nth-child(2) > a")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+ 
+def get_dungeon_dif1(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector(
+      "#content > div:nth-child(3) > div > form > table > tbody > tr > td:nth-child(1) > input")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+    
+def get_dungeon_labels(client):
+  time.sleep(1)
+  try:
+    return client.find_elements_by_class_name("map_label")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+    
+def is_dungeon_on_cooldown(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector("#content > div:nth-child(2) > div > div > span")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+ 
 ########### EXPEDITION ###########
 
 def get_points(client):
