@@ -43,7 +43,7 @@ Does expeditions and eats food from inventory if needed.
 
 ``` SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True, True) ```
 
-Script takes couple of number type parameters(ignore first two).
+Script takes couple of number type parameters (ignore first two).
 1. Selects which menu option should be used in locations
 2. Selects which enemy should be attacked
 3. Minimum health percentage when it should start to eat food
