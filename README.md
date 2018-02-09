@@ -20,10 +20,10 @@ Okay, so now we've got everything set up, we need a profile to specify a user. C
 
 DEFAULT_GLADIATUS_URI = "http://www.gladiatus.lt"  
 ACCOUNT_USERNAME = "name"  
-ACCOUNT_PASSWORD = "password"  
+ACCOUNT_PASSWORD = "password64"  
 ACCOUNT_SERVER   = "Provincija 14"   
 
-No details will be sent over the network (only when logging in), if you don't believe it, see for yourself.
+No details will be sent over the network (only when logging in), if you don't believe it, see for yourself. Password should be encoded in base64 and account server should be full text matching the selection box option.
 
 To start automation, run 'py main.py username' command in the console.  Afterwards you should see log message that web driver is starting and new browser window popups. Automation script will login automatically.
 

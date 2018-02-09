@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from objects import BOX_USERNAME,BOX_PASSWORD,BOX_SERVER
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
+import base64
 import time
 
 def puts (text):
@@ -107,7 +108,7 @@ def log_in(client,user,notice):
     puts("Logging in")
     # Login;
     box_username.send_keys(user.ACCOUNT_USERNAME)
-    box_password.send_keys(user.ACCOUNT_PASSWORD)
+    box_password.send_keys(base64.b64decode(user.ACCOUNT_PASSWORD).decode("utf-8"))
     box_server.select_by_visible_text(user.ACCOUNT_SERVER)
     box_username.send_keys(Keys.RETURN)
   except NoSuchElementException:
