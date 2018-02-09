@@ -65,12 +65,14 @@ def get_enemy(client, enemy_selection):
     puts("Cannot select enemy {0}".format(str(location_selection)))
   return False
   
-def get_expedition_cooldown_time(client):
+def get_expedition_cooldown_time(client, check_for_work):
   time.sleep(1)
   try:
     cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_text_expedition").text
     if (cooldown_bar_text == "-"):
       return False
+    if (check_for_work):
+      return  True
     nums = [int(n) for n in cooldown_bar_text.split(':')]
     return nums[0] * 3600 + nums[1] * 60 + nums[2]
   except (NoSuchElementException, ElementNotVisibleException):

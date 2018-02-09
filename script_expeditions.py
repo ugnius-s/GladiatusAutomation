@@ -6,7 +6,7 @@ import time
 def loop(client, user, location_selection, enemy_selection, max_hp, exit_on_zero_points):  
   
   # If cannot determine cooldown time, must be working or somethings wrong. Exit script
-  if not (SELECTORS.get_expedition_cooldown_time(client)):
+  if not (SELECTORS.get_expedition_cooldown_time(client, True)):
     puts("Exit expeditions")
     return
     
@@ -42,7 +42,7 @@ def loop(client, user, location_selection, enemy_selection, max_hp, exit_on_zero
 	 	
       if SELECTORS.is_expedition_on_cooldown(client):
         puts("Expedition on cooldown")
-        wait_time = SELECTORS.get_expedition_cooldown_time(client)
+        wait_time = SELECTORS.get_expedition_cooldown_time(client, False)
       else:
         puts("Starting expedition")
         check_notifications(client)
