@@ -178,7 +178,6 @@ def get_tab(client,tab_index):
     return False
 
 def get_inventory(client):
-  time.sleep(1)
   try:
     return client.find_element_by_id("inv")
   except (NoSuchElementException, ElementNotVisibleException):

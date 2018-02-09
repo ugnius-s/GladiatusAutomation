@@ -53,7 +53,7 @@ def eat_food(client):
     if(tab):
       tab.click()
     
-    inv = SELECTORS.get_avatar(client)
+    inv = SELECTORS.get_inventory(client)
     
     if(inv): 
       for element in (inv.find_elements_by_css_selector("*")):
@@ -76,7 +76,7 @@ def eat_food(client):
   
   # Get avatar and inventory objects
   avatar = SELECTORS.get_avatar(client)
-  inv = SELECTORS.get_avatar(client)
+  inv = SELECTORS.get_inventory(client)
   if not (avatar or inv):
     return False
     
