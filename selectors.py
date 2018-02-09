@@ -1,10 +1,43 @@
 from functions import puts
+from selenium.common.exceptions import NoSuchElementException,ElementNotVisibleException
 import time
+
+###########    JOB     ###########
+
+def get_job_menu(client):
+  client.execute_script("switchMenu(1)")
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector("#submenu1 > a:nth-child(1)")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_job_do(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector("#doWork")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+    
+def get_job_cooldown_time(client):
+  time.sleep(1)
+  try:
+    cooldown = client.find_element_by_css_selector(
+      "#content > article > section > table > tbody > tr:nth-child(3) > td:nth-child(2) > span")
+    nums = [int(n) for n in cooldown.text.split(':')]
+    return nums[0] * 3600 + nums[1] * 60 + nums[2]
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+########### EXPEDITION ###########
 
 def get_points(client):
   time.sleep(1)
-  return int(client.find_element_by_css_selector("#expeditionpoints_value_point").text)
-  
+  try:
+    return int(client.find_element_by_css_selector("#expeditionpoints_value_point").text)
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
 def get_expedition_bar(client):
   time.sleep(1)
   try:

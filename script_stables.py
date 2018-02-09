@@ -1,5 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
 from functions import puts,check_bonus,log_in,check_notifications,delay
+import selectors as SELECTORS
 import time
 
 def loop(client, user, hours):
@@ -15,22 +16,17 @@ def loop(client, user, hours):
     if (worked_hours == hours):
       puts("Exiting script after working for {0} hours".format(worked_hours))
       return
-
-    client.execute_script("switchMenu(1)")
 	
-    try:
-      job_link = client.find_element_by_css_selector("#submenu1 > a:nth-child(1)")
-      job_link.click();
-    except NoSuchElementException:
-      puts("Can't access Job menu, maybe disconnected?")
+    job_menu = SELECTORS.get_job_menu(client)
+    if (job_menu): 
+      job_menu.click();
 
-    try:
-      job_link_do = client.find_element_by_css_selector("#doWork")
-      job_link_do.click()
+    job_do = SELECTORS.get_job_do(client)
+    if (job_do):
+      job_do.click()
       worked_hours += 1
       puts("Starting Work")
-    except NoSuchElementException:
-      puts("Unable to start working, will try again in 60 seconds") 
-      wait_time = 60
+    else:
+     wait_time = SELECTORS.get_job_cooldown_time(client)
 
     delay(wait_time)
