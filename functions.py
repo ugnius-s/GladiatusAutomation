@@ -118,6 +118,9 @@ def check_notifications(client):
   
   while found:
     link_notification = SELECTORS.get_notification(client)
+    if not (link_notification):
+      return False
+      
     try:
       link_notification.click()
       puts("Notification closed")

@@ -30,6 +30,35 @@ def get_job_cooldown_time(client):
   except (NoSuchElementException, ElementNotVisibleException):
     return False
 
+########### DUNGEON ###########
+
+def get_dungeon_cooldown_time(client, check_for_work):
+  time.sleep(1)
+  try:
+    cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_text_dungeon").text
+    if (cooldown_bar_text == "-"):
+      return False
+    if (check_for_work):
+      return  True
+    nums = [int(n) for n in cooldown_bar_text.split(':')]
+    return nums[0] * 3600 + nums[1] * 60 + nums[2]
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_dungeon_points(client):
+  time.sleep(1)
+  try:
+    return int(client.find_element_by_css_selector("#dungeonpoints_value_point").text)
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_dungeon_bar(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector("#cooldown_bar_dungeon > a:nth-child(3)")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+  
 ########### EXPEDITION ###########
 
 def get_points(client):
