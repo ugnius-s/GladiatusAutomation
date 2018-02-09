@@ -29,7 +29,7 @@ To start automation, run 'py main.py username' command in the console.  Afterwar
 
 ## How to change scripts? ##
 
-At this moment, there are no interface to manage automation, thus we have to do it manual way. You will find script execution at the bottom of main.py file. Uncoment which script you want to execute. Note, that currently only 2 scripts are available.
+At this moment, there are no interface to manage automation, thus we have to do it manual way. You will find script execution at the bottom of main.py file. Feel free to create your own execution order. Note, that currently only 2 scripts are available.
 
 ## * Job Stables * ##
 
