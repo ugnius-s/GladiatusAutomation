@@ -171,7 +171,6 @@ def get_server_box(client):
 #### CHARACTER ####
 
 def get_tab(client,tab_index):
-  time.sleep(1)
   try:
     return client.find_element_by_css_selector(
       "#inventory_nav > a:nth-child({0})".format(tab_index))
