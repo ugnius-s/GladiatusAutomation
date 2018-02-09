@@ -33,9 +33,9 @@ At this moment, there are no interface to manage automation, thus we have to do 
 
 ## * Job Stables * ##
 
-When started, bot will work in stables for every hour until end of universe.  
+When started, bot will work in stables for parameter hours or until the end of universe if -1 specified.  
 
-``` SCRIPT_STABLES.loop(client, USER) ```
+``` SCRIPT_STABLES.loop(client, USER, 2) ```
 
 ## * Expedition Script * ##
 
