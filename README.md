@@ -29,7 +29,7 @@ To start automation, run 'py main.py username' command in the console.  Afterwar
 
 ## How to change scripts? ##
 
-At this moment, there are no interface to manage automation, thus we have to do it manual way. You will find script execution at the bottom of main.py file. Feel free to create your own execution order. Note, that currently only 2 scripts are available.
+At this moment, there are no interface to manage automation, thus we have to do it manual way. You will find script execution at the bottom of main.py file. Feel free to create your own execution order. Note, that currently only 3 scripts are available.
 
 ## * Job Stables * ##
 
@@ -49,3 +49,13 @@ Script takes couple of number type parameters (ignore first two).
 3. Minimum health percentage when it should start to eat food
 4. Exit script on 0 expedition points
 5. Exit script when out of food
+
+## * Dungeoning Script * ##
+
+Does dungeons by clearing every available enemy.  
+
+``` SCRIPT_DUNGEONS.loop(client, USER, 5, True) ```
+
+Script takes couple of number type parameters (ignore first two).
+1. Selects which menu option should be used in locations
+2. Exit script on 0 dungeon points
