@@ -39,7 +39,7 @@ When started, bot will work in stables for every hour until end of universe.
 
 ## * Expedition Script * ##
 
-Does expeditions and eats food from inventory if needed.  
+Does expeditions and eats food from inventory if needed (ignore first two).  
 
 ``` SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True, True) ```
 
