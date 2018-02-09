@@ -9,7 +9,7 @@ def loop(client, user, location_selection,
   
   # If cannot determine cooldown time, must be working or somethings wrong. Exit script
   if not (SELECTORS.get_expedition_cooldown_time(client, True)):
-    puts("Exit expeditions")
+    puts("Exiting expeditions")
     return
     
   puts("Doing expedition")

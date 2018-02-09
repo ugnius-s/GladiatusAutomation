@@ -8,7 +8,11 @@ import base64
 import time
 
 def puts (text):
-  print('['+str(datetime.now())+']$ '+text)
+  message = '['+str(datetime.now())+']$ '+ text
+  # file = open("automation.log","a") 
+  # file.write(message+'\n')
+  # file.close()
+  print(message)
 
 def delay(wait_time):
   for second in range (1,wait_time+1):
