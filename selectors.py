@@ -68,8 +68,10 @@ def get_enemy(client, enemy_selection):
 def get_expedition_cooldown_time(client):
   time.sleep(1)
   try:
-    cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_text_expedition")
-    nums = [int(n) for n in cooldown_bar_text.text.split(':')]
+    cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_text_expedition").text
+    if (cooldown_bar_text == "-"):
+      return False
+    nums = [int(n) for n in cooldown_bar_text.split(':')]
     return nums[0] * 3600 + nums[1] * 60 + nums[2]
   except (NoSuchElementException, ElementNotVisibleException):
     return False

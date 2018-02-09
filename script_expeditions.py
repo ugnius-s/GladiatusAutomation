@@ -3,7 +3,13 @@ from functions import puts,check_bonus,log_in,check_notifications,check_hp,eat_f
 import selectors as SELECTORS
 import time
 
-def loop(client, user, location_selection, enemy_selection, max_hp, exit_on_zero_points):
+def loop(client, user, location_selection, enemy_selection, max_hp, exit_on_zero_points):  
+  
+  # If cannot determine cooldown time, must be working or somethings wrong. Exit script
+  if not (SELECTORS.get_expedition_cooldown_time(client)):
+    puts("Exit expeditions")
+    return
+    
   puts("Doing expedition")
   
   while True:
