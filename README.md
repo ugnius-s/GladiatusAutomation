@@ -25,7 +25,7 @@ ACCOUNT_SERVER   = "Provincija 14"
 
 No details will be sent over the network (only when logging in), if you don't believe it, see for yourself.
 
-To start automation, run 'py main.py username' command in the console.  Afterwards you should see log message in the console that web driver is starting and new browser window popups. Automation script will login automatically.
+To start automation, run 'py main.py username' command in the console.  Afterwards you should see log message that web driver is starting and new browser window popups. Automation script will login automatically.
 
 ## How to change scripts? ##
 
