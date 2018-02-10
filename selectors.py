@@ -77,7 +77,7 @@ def get_dungeon_dif1(client):
 def get_dungeon_areas(client):
   time.sleep(1)
   try:
-    return client.find_elements_by_css_selector("area")
+    return client.find_elements_by_css_selector("area[shape='poly']")
   except (NoSuchElementException, ElementNotVisibleException):
     return False
     
