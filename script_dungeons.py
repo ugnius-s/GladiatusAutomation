@@ -28,15 +28,13 @@ def loop(client, user, location_selection, exit_on_zero_points):
     if (dungeon_bar):
       dungeon_bar.click()
       
-    # Get go to location
+    # Go to location
     check_notifications(client)
-    puts("Entering {0} location".format(location_selection))
-
     location = SELECTORS.get_location(client, location_selection)
     if (location):
       location.click()
       
-    # Get go to dungeon tab
+    # Go to dungeon tab
     check_notifications(client)
     puts("Clicking on dungeon tab")
 
@@ -61,6 +59,7 @@ def loop(client, user, location_selection, exit_on_zero_points):
       # Select first found label and click attack
       puts("Fighting in dungeon")
       areas = SELECTORS.get_dungeon_areas(client)
+      
       if(areas):
         areas[0].click()
         wait_time = 5 * 60

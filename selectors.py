@@ -75,9 +75,8 @@ def get_dungeon_dif1(client):
     return False
     
 def get_dungeon_areas(client):
-  time.sleep(1)
   try:
-    return client.find_elements_by_css_selector("area[shape='poly']")
+    return client.find_elements_by_css_selector("img[src='9194/img/combatloc.gif']")
   except (NoSuchElementException, ElementNotVisibleException):
     return False
     
