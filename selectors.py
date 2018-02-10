@@ -74,10 +74,10 @@ def get_dungeon_dif1(client):
   except (NoSuchElementException, ElementNotVisibleException):
     return False
     
-def get_dungeon_labels(client):
+def get_dungeon_areas(client):
   time.sleep(1)
   try:
-    return client.find_elements_by_class_name("map_label")
+    return client.find_elements_by_css_selector("area")
   except (NoSuchElementException, ElementNotVisibleException):
     return False
     

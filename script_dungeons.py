@@ -60,9 +60,9 @@ def loop(client, user, location_selection, exit_on_zero_points):
     else:
       # Select first found label and click attack
       puts("Fighting in dungeon")
-      labels = SELECTORS.get_dungeon_labels(client)
-      if(labels):
-        labels[0].click()
+      areas = SELECTORS.get_dungeon_areas(client)
+      if(areas):
+        areas[0].click()
         wait_time = 5 * 60
     
     check_notifications(client)

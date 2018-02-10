@@ -21,5 +21,4 @@ log_in(client,USER,"First time log in")
 while True:
   SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True, True)
   SCRIPT_DUNGEONS.loop(client, USER, 5, True)
-  SCRIPT_STABLES.loop(client, USER, 2) 
-
+  SCRIPT_STABLES.loop(client, USER, 1) 
