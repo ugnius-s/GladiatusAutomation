@@ -46,7 +46,6 @@ def get_dungeon_cooldown_time(client, check_for_work):
     return False
 
 def get_dungeon_points(client):
-  time.sleep(1)
   try:
     return int(client.find_element_by_css_selector("#dungeonpoints_value_point").text)
   except (NoSuchElementException, ElementNotVisibleException):
@@ -90,7 +89,6 @@ def is_dungeon_on_cooldown(client):
 ########### EXPEDITION ###########
 
 def get_points(client):
-  time.sleep(1)
   try:
     return int(client.find_element_by_css_selector("#expeditionpoints_value_point").text)
   except (NoSuchElementException, ElementNotVisibleException):

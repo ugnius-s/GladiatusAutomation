@@ -35,7 +35,12 @@ At this moment, there are no interface to manage automation, thus we have to do 
 
 When started, bot will work in stables for parameter hours or until buffer overflow if -1 specified.  
 
-``` SCRIPT_STABLES.loop(client, USER, 2) ```
+``` SCRIPT_STABLES.loop(client, USER, 2, True) ```
+
+Script takes couple of number type parameters (ignore first two).
+1. Exit script after working for n hours
+2. Exit script if we still have expedition or dungeon points
+
 
 ## * Expedition Script * ##
 
