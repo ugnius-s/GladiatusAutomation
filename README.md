@@ -39,7 +39,7 @@ When started, bot will work in stables for parameter hours or until buffer overf
 
 Script takes couple of number type parameters (ignore first two).
 1. Exit script after working for n hours
-2. Exit script if we still have expedition or dungeon points
+2. Exit script if we still have expedition or dungeon points, but don't exit if we were working previously
 
 
 ## * Expedition Script * ##
