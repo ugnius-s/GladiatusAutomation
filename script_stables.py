@@ -9,12 +9,7 @@ def loop(client, user, max_hours):
   
   while True:
     wait_time = 3610
-    log_in(client, user,"Checking if we can log in")
-    
-    if (done_hours == max_hours):
-      puts("Exiting script after working for {0} hours".format(done_hours))
-      return
-      
+    log_in(client, user,"Checking if we can log in")   
     check_notifications(client)
 	
     job_menu = SELECTORS.get_job_menu(client)
@@ -30,3 +25,7 @@ def loop(client, user, max_hours):
      wait_time = SELECTORS.get_job_cooldown_time(client)
 
     delay(wait_time)
+    
+    if (done_hours == max_hours):
+      puts("Exiting script after working for {0} hours".format(done_hours))
+      return
