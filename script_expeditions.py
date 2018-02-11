@@ -4,8 +4,9 @@ import selectors as SELECTORS
 import time
 
 def loop(client, user, location_selection, 
-  enemy_selection, max_hp, exit_on_zero_points, exit_on_no_food):  
+  enemy_selection, max_hp, exit_on_zero_points, exit_on_no_food, max_expeditions):  
   done_expeditions = 0
+  
   # If cannot determine cooldown time, must be working or somethings wrong. Exit script
   if not (SELECTORS.get_expedition_cooldown_time(client, True)):
     puts("Exiting expeditions")
@@ -15,7 +16,7 @@ def loop(client, user, location_selection,
   
   while True:
     wait_time = 60
-    log_in(client, user,"Checking if we can log in")
+    log_in(client, user,"Checking if we can log in")     
     check_notifications(client)
 
     # Check if we need to exit before delay
@@ -61,5 +62,9 @@ def loop(client, user, location_selection,
         else:
           wait_time = 30 * 60
 
+    if (done_expeditions == max_expeditions):
+      puts("Exiting script after {0} expeditions".format(max_expeditions))
+      return
+      
     check_notifications(client)
     delay(wait_time)

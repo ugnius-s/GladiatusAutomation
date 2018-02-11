@@ -3,8 +3,9 @@ from functions import puts,check_bonus,log_in,check_notifications,delay
 import selectors as SELECTORS
 import time
 
-def loop(client, user, location_selection, exit_on_zero_points):    
-  done_dungeons = 0
+def loop(client, user, location_selection, exit_on_zero_points, max_dungeon_fights):    
+  done_dungeon_fights = 0
+  
   # If cannot determine cooldown time, must be working or somethings wrong. Exit script
   if not (SELECTORS.get_expedition_cooldown_time(client, True)):
     puts("Exiting dungeons")
@@ -63,8 +64,12 @@ def loop(client, user, location_selection, exit_on_zero_points):
       
       if(areas):
         areas[0].click()
-        done_dungeons += 1
+        done_dungeon_fights += 1
         wait_time = 5 * 60
-    
+ 
+    if (done_dungeon_fights == max_dungeon_fights):
+      puts("Exiting script after {0} dungeons".format(done_dungeon_fights))
+      return 
+
     check_notifications(client)
     delay(wait_time)

@@ -33,7 +33,7 @@ At this moment, there are no interface to manage automation, thus we have to do 
 
 ## * Job Stables * ##
 
-When started, bot will work in stables for parameter hours or until the end of universe if -1 specified.  
+When started, bot will work in stables for parameter hours or until buffer overflow if -1 specified.  
 
 ``` SCRIPT_STABLES.loop(client, USER, 2) ```
 
@@ -41,7 +41,7 @@ When started, bot will work in stables for parameter hours or until the end of u
 
 Does expeditions and eats food from inventory if needed.  
 
-``` SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True, True) ```
+``` SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True, True, 1) ```
 
 Script takes couple of number type parameters (ignore first two).
 1. Selects which menu option should be used in locations
@@ -49,13 +49,15 @@ Script takes couple of number type parameters (ignore first two).
 3. Minimum health percentage when it should start to eat food
 4. Exit script on 0 expedition points
 5. Exit script when out of food
+6. Exit script after n expedition fights
 
 ## * Dungeoning Script * ##
 
 Does dungeons by clearing every available enemy.  
 
-``` SCRIPT_DUNGEONS.loop(client, USER, 5, True) ```
+``` SCRIPT_DUNGEONS.loop(client, USER, 5, True, 1) ```
 
 Script takes couple of number type parameters (ignore first two).
 1. Selects which menu option should be used in locations
 2. Exit script on 0 dungeon points
+3. Exit script after n dungeon fights

@@ -3,19 +3,19 @@ from functions import puts,check_bonus,log_in,check_notifications,delay
 import selectors as SELECTORS
 import time
 
-def loop(client, user, hours):
-  puts("Working in stables for {0} hours".format(hours))
+def loop(client, user, max_hours):
+  puts("Working in stables for {0} hours".format(max_hours))
   done_hours = 0
   
   while True:
     wait_time = 3610
     log_in(client, user,"Checking if we can log in")
-    check_notifications(client)
-    time.sleep(1)
-
-    if (done_hours == hours):
+    
+    if (done_hours == max_hours):
       puts("Exiting script after working for {0} hours".format(done_hours))
       return
+      
+    check_notifications(client)
 	
     job_menu = SELECTORS.get_job_menu(client)
     if (job_menu): 
