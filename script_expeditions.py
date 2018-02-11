@@ -5,14 +5,13 @@ import time
 
 def loop(client, user, location_selection, 
   enemy_selection, max_hp, exit_on_zero_points, exit_on_no_food):  
-  puts("Entering expeditions")
-  
+  done_expeditions = 0
   # If cannot determine cooldown time, must be working or somethings wrong. Exit script
   if not (SELECTORS.get_expedition_cooldown_time(client, True)):
     puts("Exiting expeditions")
     return
     
-  puts("Doing expedition")
+  puts("Entering expeditions")
   
   while True:
     wait_time = 60
@@ -51,6 +50,7 @@ def loop(client, user, location_selection,
         enemy = SELECTORS.get_enemy(client, enemy_selection)
         if (enemy):
           enemy.click()
+          done_expeditions += 1
           wait_time = 5 * 60
           
     else: # Eat food
