@@ -33,7 +33,6 @@ def get_job_cooldown_time(client):
 ########### DUNGEON ###########
 
 def get_dungeon_cooldown_time(client, check_for_work):
-  time.sleep(1)
   try:
     cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_text_dungeon").text
     if (cooldown_bar_text == "-"):
@@ -80,7 +79,6 @@ def get_dungeon_areas(client):
     return False
     
 def is_dungeon_on_cooldown(client):
-  time.sleep(1)
   try:
     return client.find_element_by_css_selector("#content > div:nth-child(2) > div > div > span")
   except (NoSuchElementException, ElementNotVisibleException):
@@ -122,7 +120,6 @@ def get_enemy(client, enemy_selection):
   return False
   
 def get_expedition_cooldown_time(client, check_for_work):
-  time.sleep(1)
   try:
     cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_text_expedition").text
     if (cooldown_bar_text == "-"):
@@ -135,7 +132,6 @@ def get_expedition_cooldown_time(client, check_for_work):
     return False
     
 def is_expedition_on_cooldown(client):
-  time.sleep(1)
   try:
     cooldown_indicator = client.find_elements_by_class_name("expedition_cooldown_reduce")
     if(len(cooldown_indicator) > 0):
@@ -204,7 +200,6 @@ def get_character_view(client):
 #### ARENAS ####
 
 def is_arena_provinciarum_on_cooldown(client):
-  time.sleep(1)
   try:
     cooldown_indicator = client.find_elements_by_css_selector("#errorText > span")
     if(len(cooldown_indicator) > 0):
@@ -230,14 +225,12 @@ def get_arena_provinciarum_tab(client):
     return False
 
 def get_arena_bar(client):
-  time.sleep(1)
   try:
     return client.find_element_by_css_selector("#cooldown_bar_arena > a:nth-child(3)")
   except (NoSuchElementException, ElementNotVisibleException):
     return False
 
 def get_arena_cooldown_time(client, check_for_work):
-  time.sleep(1)
   try:
     cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_arena").text
     if (cooldown_bar_text == "-"):
