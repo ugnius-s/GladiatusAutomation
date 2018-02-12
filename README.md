@@ -29,7 +29,7 @@ To start automation, run 'py main.py username' command in the console.  Afterwar
 
 ## How to change scripts? ##
 
-At this moment, there are no interface to manage automation, thus we have to do it manual way. You will find script execution at the bottom of main.py file. Feel free to create your own execution order. Note, that currently only 3 scripts are available.
+At this moment, there are no interface to manage automation, thus we have to do it manual way. You will find script execution at the bottom of main.py file. Feel free to create your own execution order. Note, that currently only 4 scripts are available.
 
 ## * Job Stables * ##
 
@@ -66,3 +66,15 @@ Script takes couple of number type parameters (ignore first two).
 1. Selects which menu option should be used in locations
 2. Exit script on 0 dungeon points
 3. Exit script after n dungeon fights
+
+## * Arena Provinciarum Script * ##
+
+Does arena provinciarum and eats food from inventory if needed.  
+
+``` SCRIPT_EXPEDITIONS.loop(client, USER, 5, 40, True, 1) ```
+
+Script takes couple of number type parameters (ignore first two).
+1. Selects which enemy should be attacked
+2. Minimum health percentage when it should start to eat food
+3. Exit script when out of food
+4. Exit script on 0 expedition points

@@ -201,6 +201,54 @@ def get_character_view(client):
   except (NoSuchElementException, ElementNotVisibleException):
     return False
 
+#### ARENAS ####
+
+def is_arena_provinciarum_on_cooldown(client):
+  time.sleep(1)
+  try:
+    cooldown_indicator = client.find_elements_by_css_selector("#errorText > span")
+    if(len(cooldown_indicator) > 0):
+      return True
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_arena_provinciarum_enemy(client, enemy_selection):
+  time.sleep(1)
+  puts("Selected {0} enemy".format(enemy_selection))
+  try:
+    return client.find_elements_by_class_name("attack")[enemy_selection-1]
+  except (NoSuchElementException, ElementNotVisibleException):
+    puts("Cannot select enemy {0}".format(str(location_selection)))
+  return False
+
+def get_arena_provinciarum_tab(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector(
+       "#mainnav > li:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > a:nth-child(1)")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_arena_bar(client):
+  time.sleep(1)
+  try:
+    return client.find_element_by_css_selector("#cooldown_bar_arena > a:nth-child(3)")
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False
+
+def get_arena_cooldown_time(client, check_for_work):
+  time.sleep(1)
+  try:
+    cooldown_bar_text = client.find_element_by_css_selector("#cooldown_bar_arena").text
+    if (cooldown_bar_text == "-"):
+      return False
+    if (check_for_work):
+      return  True
+    nums = [int(n) for n in cooldown_bar_text.split(':')]
+    return nums[0] * 3600 + nums[1] * 60 + nums[2]
+  except (NoSuchElementException, ElementNotVisibleException):
+    return False    
+
 #### NOTIFICATIONS ####
 
 def get_bonus(client):
