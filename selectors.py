@@ -6,8 +6,8 @@ import time
 ###########    JOB     ###########
 
 def get_job_menu(client):
-  client.execute_script("switchMenu(1)")
   time.sleep(1)
+  client.execute_script("switchMenu(1)")
   try:
     return client.find_element_by_css_selector("#submenu1 > a:nth-child(1)")
   except (NoSuchElementException, ElementNotVisibleException):
