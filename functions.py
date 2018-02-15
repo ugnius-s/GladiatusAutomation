@@ -2,7 +2,7 @@ from datetime import datetime
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.common.exceptions import NoSuchElementException,ElementNotVisibleException,ElementNotVisibleException
+from selenium.common.exceptions import NoSuchElementException,ElementNotVisibleException,ElementNotVisibleException,WebDriverException
 import selectors as SELECTORS
 import base64
 import time
