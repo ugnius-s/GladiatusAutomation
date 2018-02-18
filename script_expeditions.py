@@ -28,7 +28,6 @@ def loop(client, user, location_selection,
     if check_hp(client, max_hp):
     
       # Go to expeditions
-      check_notifications(client)
       expedition_bar = SELECTORS.get_expedition_bar(client)
       if (expedition_bar):
         expedition_bar.click()

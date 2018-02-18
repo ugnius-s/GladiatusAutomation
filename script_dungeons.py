@@ -23,7 +23,6 @@ def loop(client, user, location_selection, exit_on_zero_points, max_dungeon_figh
       return
         
     # Go to dungeons
-    check_notifications(client)
     puts("Entering dungeons")
 
     dungeon_bar = SELECTORS.get_dungeon_bar(client)
