@@ -10,7 +10,6 @@ def loop(client, user, max_hours, exit_if_both_not_zero):
   while True:
     wait_time = 3610
     log_in(client, user,"Checking if we can log in")
-    
     check_notifications(client)
 	
     job_menu = SELECTORS.get_job_menu(client)
