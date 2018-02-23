@@ -21,6 +21,6 @@ log_in(client,USER,"First time log in")
 
 while True:
   #SCRIPT_ARENA_PROVINCIARUM.loop(client, USER, 5, 50, True, 5)
-  SCRIPT_EXPEDITIONS.loop(client, USER, 5, 4, 40, True, True, 1)
-  SCRIPT_DUNGEONS.loop(client, USER, 3, True, 1)
+  SCRIPT_EXPEDITIONS.loop(client, USER, 6, 1, 40, True, True, 1)
+  SCRIPT_DUNGEONS.loop(client, USER, 5, True, 1)
   SCRIPT_STABLES.loop(client, USER, 1, True) 

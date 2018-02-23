@@ -8,4 +8,4 @@ __pycache__
 *.log
 
 # Profiles
-sharps.py
+user_*.py
