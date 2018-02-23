@@ -26,12 +26,10 @@ def loop(client, user, enemy_selection, max_hp, exit_on_no_food, max_arenas):
         arena_bar.click()
       
       # Get go to tab
-      check_notifications(client)
       tab = SELECTORS.get_arena_provinciarum_tab(client)
       if (tab):
         tab.click()
         
-      check_notifications(client)	 	
       if SELECTORS.is_arena_provinciarum_on_cooldown(client):
         puts("Arena on cooldown")
         wait_time = SELECTORS.get_arena_cooldown_time(client, False)

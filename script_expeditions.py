@@ -33,20 +33,16 @@ def loop(client, user, location_selection,
         expedition_bar.click()
       
       # Get go to location
-      check_notifications(client)
       location = SELECTORS.get_location(client, location_selection)
       if (location):
         location.click()
         
-      puts("Getting cooldowns")
-      check_notifications(client)
-	 	
+      puts("Getting cooldowns")	 	
       if SELECTORS.is_expedition_on_cooldown(client):
         puts("Expedition on cooldown")
         wait_time = SELECTORS.get_expedition_cooldown_time(client, False)
       else:
         puts("Starting expedition")
-        check_notifications(client)
         enemy = SELECTORS.get_enemy(client, enemy_selection)
         if (enemy):
           enemy.click()
@@ -65,5 +61,4 @@ def loop(client, user, location_selection,
       puts("Exiting script after {0} expeditions".format(max_expeditions))
       return
       
-    check_notifications(client)
     delay(wait_time)

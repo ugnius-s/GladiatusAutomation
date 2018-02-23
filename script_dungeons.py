@@ -30,13 +30,11 @@ def loop(client, user, location_selection, exit_on_zero_points, max_dungeon_figh
       dungeon_bar.click()
       
     # Go to location
-    check_notifications(client)
     location = SELECTORS.get_location(client, location_selection)
     if (location):
       location.click()
       
     # Go to dungeon tab
-    check_notifications(client)
     puts("Clicking on dungeon tab")
 
     tab = SELECTORS.get_dungeon_tab(client)
@@ -44,7 +42,6 @@ def loop(client, user, location_selection, exit_on_zero_points, max_dungeon_figh
       tab.click()
       
     # Dificulty 1
-    check_notifications(client)
     puts("Selecting first difficulty")
 
     dif1 = SELECTORS.get_dungeon_dif1(client)
@@ -70,5 +67,4 @@ def loop(client, user, location_selection, exit_on_zero_points, max_dungeon_figh
       puts("Exiting script after {0} dungeons".format(done_dungeon_fights))
       return 
 
-    check_notifications(client)
     delay(wait_time)
