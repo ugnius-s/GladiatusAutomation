@@ -21,8 +21,6 @@ def loop(client, user, enemy_selection, max_hp, exit_on_no_food, max_arenas):
     # Check if we need to eat
     if check_hp(client, max_hp):
     
-      # Go to expeditions
-      check_notifications(client)
       arena_bar = SELECTORS.get_arena_bar(client)
       if (arena_bar):
         arena_bar.click()
@@ -38,9 +36,7 @@ def loop(client, user, enemy_selection, max_hp, exit_on_no_food, max_arenas):
         puts("Arena on cooldown")
         wait_time = SELECTORS.get_arena_cooldown_time(client, False)
       else:
-        puts("Starting arena")
-        check_notifications(client)
-        
+        puts("Starting arena")        
         enemy = SELECTORS.get_arena_provinciarum_enemy(client, enemy_selection)
         if (enemy):
           enemy.click()
@@ -59,5 +55,4 @@ def loop(client, user, enemy_selection, max_hp, exit_on_no_food, max_arenas):
       puts("Exiting script after {0} arenas".format(max_arenas))
       return
       
-    check_notifications(client)
     delay(wait_time)

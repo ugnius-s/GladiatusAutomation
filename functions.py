@@ -114,7 +114,8 @@ def check_bonus(client):
 def check_notifications(client):
   # Possible event such as level up could break automation, thus we have to check and click
   found = True
-  check_bonus(client)
+  if check_bonus(client):
+    time.sleep(1)
   
   while found:
     link_notification = SELECTORS.get_notification(client)
