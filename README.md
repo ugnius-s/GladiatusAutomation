@@ -14,7 +14,7 @@ Lastly you should create a directory, run 'pip install selenium' and clone repo.
 
 ## How to use it? ##
 
-Okay, so now we've got everything set up, we need a profile to specify a user. Create a file named username.py in the same directory with the following contents.
+Okay, so now we've got everything set up, we need a profile to specify a user. Create a file named user_username.py in the same directory with the following contents.
 
 DEFAULT_GLADIATUS_URI = "http://www.gladiatus.lt"  
 ACCOUNT_USERNAME = "name"  
@@ -23,7 +23,7 @@ ACCOUNT_SERVER   = "Provincija 14"
 
 No details will be sent over the network (only when logging in), if you don't believe it, see for yourself. Password should be encoded in base64 and account server should be full text matching the selection box option.
 
-To start automation, run 'py main.py username' command in the console.  Afterwards you should see log message that web driver is starting and new browser window popups. Automation script will login automatically.
+To start automation, run 'py main.py user_username' command in the console.  Afterwards you should see log message that web driver is starting and new browser window popups. Automation script will login automatically.
 
 ## How to change scripts? ##
 
