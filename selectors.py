@@ -179,7 +179,7 @@ def get_inventory(client):
 def get_avatar(client):
   time.sleep(1)
   try:
-    return client.find_element_by_css_selector("#avatar > div:nth-child(4)")
+    return client.find_element_by_css_selector("#avatar > div.ui-droppable")
   except:
     return False
 
