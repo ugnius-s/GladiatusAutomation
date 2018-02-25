@@ -5,7 +5,8 @@ import time
 
 def loop(client, user, location_selection, exit_on_zero_points, max_dungeon_fights):    
   done_dungeon_fights = 0
-  
+  log_in(client, user,"Checking if we can log in")     
+
   # If cannot determine cooldown time, must be working or somethings wrong. Exit script
   if not (SELECTORS.get_expedition_cooldown_time(client, True)):
     puts("Exiting dungeons")

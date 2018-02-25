@@ -6,7 +6,8 @@ import time
 def loop(client, user, location_selection, 
   enemy_selection, max_hp, exit_on_zero_points, exit_on_no_food, max_expeditions):  
   done_expeditions = 0
-  
+  log_in(client, user,"Checking if we can log in")     
+
   # If cannot determine cooldown time, must be working or somethings wrong. Exit script
   if not (SELECTORS.get_expedition_cooldown_time(client, True)):
     puts("Exiting expeditions")

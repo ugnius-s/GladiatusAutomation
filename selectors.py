@@ -213,7 +213,7 @@ def get_arena_provinciarum_enemy(client, enemy_selection):
   try:
     return client.find_elements_by_class_name("attack")[enemy_selection-1]
   except:
-    puts("Cannot select enemy {0}".format(str(location_selection)))
+    puts("Cannot select enemy {0}".format(str(enemy_selection)))
   return False
 
 def get_arena_provinciarum_tab(client):

@@ -5,7 +5,8 @@ import time
 
 def loop(client, user, enemy_selection, max_hp, exit_on_no_food, max_arenas):  
   done_arenas = 0
-  
+  log_in(client, user,"Checking if we can log in")     
+
   # If cannot determine cooldown time, must be working or somethings wrong. Exit script
   if not (SELECTORS.get_arena_cooldown_time(client, True)):
     puts("Exiting arena provinciarum")
