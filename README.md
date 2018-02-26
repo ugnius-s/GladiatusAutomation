@@ -81,7 +81,7 @@ Script takes couple of number type parameters (ignore first two).
 
 Does event fights and eats food from inventory if needed.  
 
-``` SCRIPT_EXPEDITIONS.loop(client, USER, 1, 40, True, True, 1) ```
+``` SCRIPT_EVENT_FIGHT.loop(client, USER, 1, 40, True, True, 1) ```
 
 Script takes couple of number type parameters (ignore first two).
 1. Selects which enemy should be attacked
