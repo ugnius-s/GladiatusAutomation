@@ -10,6 +10,7 @@ SCRIPT_STABLES = __import__('script_stables')
 SCRIPT_EXPEDITIONS = __import__('script_expeditions')
 SCRIPT_DUNGEONS = __import__('script_dungeons')
 SCRIPT_ARENA_PROVINCIARUM = __import__('script_arena_provinciarum')
+SCRIPT_EVENT_FIGHT = __import__('script_event_fight')
 
 # Create client driver;
 puts("Creating web driver")
@@ -20,7 +21,8 @@ client.get(USER.DEFAULT_GLADIATUS_URI)
 log_in(client,USER,"First time log in")
 
 while True:
+  SCRIPT_EVENT_FIGHT.loop(client, USER, 1, 40, True, True, 1)
   #SCRIPT_ARENA_PROVINCIARUM.loop(client, USER, 5, 50, True, 5)
-  SCRIPT_EXPEDITIONS.loop(client, USER, 6, 2, 40, True, True, 1)
+  SCRIPT_EXPEDITIONS.loop(client, USER, 7, 2, 40, True, True, 1)
   SCRIPT_DUNGEONS.loop(client, USER, 5, True, 1)
   SCRIPT_STABLES.loop(client, USER, 1, True) 

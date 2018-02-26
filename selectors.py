@@ -242,6 +242,39 @@ def get_arena_cooldown_time(client, check_for_work):
   except:
     return False    
 
+    
+#### Event fight #####
+
+def get_event_fight_enemy(client, enemy_selection):
+  time.sleep(1)
+  puts("Selected {0} enemy".format(enemy_selection))
+  try:
+    return client.find_element_by_css_selector(
+          "div.expedition_box:nth-child({0}) > div:nth-child(2) > button:nth-child(1)".format(str(enemy_selection)))
+  except:
+    puts("Cannot select enemy {0}".format(str(enemy_selection)))
+  return False
+
+def get_event_fight_location(client):
+  try:
+    return client.find_elements_by_class_name("menuitem")[-1]
+  except:
+    puts("Cannot go to fight events")
+    return False
+
+def get_event_fight_cooldown_time(client, check_for_work):
+  try:
+    cooldown_bar_text = client.find_element_by_css_selector("#content > div:nth-child(4) > div:nth-child(3) > span").text
+    time = cooldown_bar_text.split(' ')[-1]
+    if (time == "-"):
+      return False
+    if (check_for_work):
+      return  True    
+    nums = [int(n) for n in time.split(':')]
+    return nums[0] * 3600 + nums[1] * 60 + nums[2]
+  except:
+    return False
+
 #### NOTIFICATIONS ####
 
 def get_bonus(client):
