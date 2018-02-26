@@ -27,7 +27,7 @@ To start automation, run 'py main.py user_username' command in the console.  Aft
 
 ## How to change scripts? ##
 
-At this moment, there are no interface to manage automation, thus we have to do it manual way. You will find script execution at the bottom of main.py file. Feel free to create your own execution order. Note, that currently only 4 scripts are available.
+At this moment, there are no interface to manage automation, thus we have to do it manual way. You will find script execution at the bottom of main.py file. Feel free to create your own execution order. Note, that currently 5 scripts are available.
 
 ## * Job Stables * ##
 
@@ -76,3 +76,16 @@ Script takes couple of number type parameters (ignore first two).
 2. Minimum health percentage when it should start to eat food
 3. Exit script when out of food
 4. Exit script on 0 expedition points
+
+## * Event Fight Script * ##
+
+Does event fights and eats food from inventory if needed.  
+
+``` SCRIPT_EXPEDITIONS.loop(client, USER, 1, 40, True, True, 1) ```
+
+Script takes couple of number type parameters (ignore first two).
+1. Selects which enemy should be attacked
+2. Minimum health percentage when it should start to eat food
+3. Exit script on 0 event fight points
+4. Exit script when out of food
+5. Exit script after n event fights
