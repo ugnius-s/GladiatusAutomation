@@ -86,6 +86,6 @@ Does event fights and eats food from inventory if needed.
 Script takes couple of number type parameters (ignore first two).
 1. Selects which enemy should be attacked
 2. Minimum health percentage when it should start to eat food
-3. Exit script on 0 event fight points
+3. Exit script on 0 event fight points (not working at the moment)
 4. Exit script when out of food
 5. Exit script after n event fights
